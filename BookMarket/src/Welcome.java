@@ -25,7 +25,6 @@ public class Welcome {
 		System.out.print("메뉴 번호를 선택해주세요.");
 		int n = input.nextInt();
 		System.out.println(n + "번을 선택했습니다.");
-		System.out.println("하면 할수록 너무 어렵다 ㅋㅋㅋㅋㅋㅋ 쓰봉");
 	}
 
 }
