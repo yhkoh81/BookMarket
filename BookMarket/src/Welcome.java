@@ -53,7 +53,7 @@ public class Welcome {
 				System.out.println("7. 영수증 표시하");
 				break;
 			case 8:
-				System.out.println("8. 종료");
+				System.out.println("8. 종");
 				break;
 			}
 		}
