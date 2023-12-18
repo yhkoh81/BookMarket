@@ -24,7 +24,38 @@ public class Welcome {
 		System.out.println("*****************************************");
 		System.out.print("메뉴 번호를 선택해주세요.");
 		int n = input.nextInt();
-		System.out.println(n + "번을 선택했습니다.");
+//		System.out.println(n + "번을 선택했습니다.");
+		
+		if (n < 1 || n > 8) {
+			System.out.println("1부터 8까지의 숫자 중 하나를 입력하세요.");
+		}
+		else {
+			switch(n) {
+			case 1:
+				System.out.println("현재 고객 정보: ");
+				break;
+			case 2:
+				System.out.println("장바구니 상품 목록 보기 :");
+				break;
+			case 3:
+				System.out.println("장바구니 비우");
+				break;
+			case 4:
+				System.out.println("장바구니에 항목 추가하기 :");
+				break;
+			case 5:
+				System.out.println("5. 장바구니의 항목 수량 줄이");
+				break;
+			case 6:
+				System.out.println("6. 장바구니의 항목 삭제하");
+				break;
+			case 7:
+				System.out.println("7. 영수증 표시하");
+				break;
+			case 8:
+				System.out.println("8. 종료");
+				break;
+			}
+		}
 	}
-
 }
