@@ -34,7 +34,6 @@ public class Welcome {
 //		System.out.println(n + "번을 선택했습니다.");
 		
 		if (n < 1 || n > 8) {
-<<<<<<< HEAD
 			System.out.println("1부터 8까지의 숫자 중 하나를 입력하세요.");
 		}
 		else {
@@ -64,10 +63,8 @@ public class Welcome {
 				System.out.println("8. 종");
 				break;
 			}
-=======
 			System.out.println("1부터 8까지의 숫자 중 입력하세요.");
-		}
-		else {
+		} else {
 			switch(n) {
 			case 1:
 				System.out.println("현재 고객 정보 : ");
@@ -97,7 +94,6 @@ public class Welcome {
 				break;
 			}
 		}
->>>>>>> refs/remotes/origin/main
 		}
 	}
 }
