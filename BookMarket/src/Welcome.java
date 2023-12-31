@@ -17,7 +17,7 @@ public class Welcome {
 		String userName = input.nextLine();
 		
 		System.out.println("연락처를 입력하세요.");
-		String userMobile = input.nextInt();
+		int userMobile = input.nextInt();
 		
 		mUser = new User(userName, userMobile);
 		
