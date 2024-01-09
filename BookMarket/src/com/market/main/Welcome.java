@@ -1,4 +1,5 @@
 package com.market.main;
+import com.market.exception.CartException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -51,6 +52,8 @@ public class Welcome {
 			
 			menuIntroduction();
 			
+			// 예외처리 구문 시작 try 번호 선택에 대한 시도 영역
+			try {
 			System.out.print("메뉴 번호를 선택해주세요.");
 			int n = input.nextInt();
 //			System.out.println(n + "번을 선택했습니다.");
@@ -99,6 +102,16 @@ public class Welcome {
 					menuAdminLogin();
 					break;
 				}
+			}
+			// try에서 벗어난 부문에 대한 catch 예외처리
+		}
+			catch(CartException e) {
+				System.out.println(e.getMessage());
+				quit = true;
+		}
+			catch(Exception e) {
+				System.out.println("올바르지 않은 메뉴 선택으로 종료합니다.");
+				quit = true;
 			}
 		}
 	}
@@ -160,10 +173,11 @@ public class Welcome {
 		}
 	}
 	
-	public static void menuCartClear() {
+	public static void menuCartClear() throws CartException {
 //		System.out.println(" 3. 장바구니 비우기");
 		if (mCart.mCartCount == 0)
-			System.out.println("장바구니에 항목이 없습니다");
+			throw new CartException("장바구니에 항목이 없습니다");
+//			System.out.println("장바구니에 항목이 없습니다");
 		else {
 			System.out.println("장바구니의 모든 항목을 삭제하겠습니까? Y | N ");
 			Scanner input = new Scanner(System.in);
@@ -277,9 +291,11 @@ public class Welcome {
 		}
 	}
 	
-	public static void menuCartBill() {
+	public static void menuCartBill() throws CartException {
 		// System.out.println(" 7. 영수증 표시하기");
-		if (mCart.mCartCount == 0) System.out.println("장바구니에 항목이 없습니다");
+		if (mCart.mCartCount == 0) 
+			throw new CartException("장바구니에 항목이 없습니다");
+//			System.out.println("장바구니에 항목이 없습니다");
 		
 		else {
 			System.out.println("배송받을 분은 고객 정보와 같습니까? Y | N ");
